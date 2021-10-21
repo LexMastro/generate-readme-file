@@ -54,7 +54,17 @@ const questions = [
 ] 
 
 // TODO: Create a function to write README file
+// function createReadme(answers){
+//     const template = `# ${answers.title}
+// # Description
+// ${answers.desc}
 
+// # License
+// ![alt](url)
+// ${answers.license} 
+
+// `;
+// }
 
 
 
@@ -66,8 +76,15 @@ function init() {
     const readme = generateMarkdown(answers);
     console.log(readme)
     const fileName = "README.md"
-    const outputPath = path.join(__dirname, 'output', fileName)
-    fs.writeFile(outputPath, readme, (err) =>
+    const outputPath = path.join(__dirname, 'output')
+
+    if (!fs.existsSync(outputPath)) {
+        fs.mkdirSync(outputPath, 0744);
+    }
+
+    const filePath = path.join(outputPath, fileName)
+
+    fs.writeFileSync(filePath, readme, (err) =>
     err ? console.log(err) : console.log(`Successfully created ${fileName}!`)  
         )
     });

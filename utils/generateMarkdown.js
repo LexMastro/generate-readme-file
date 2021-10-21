@@ -34,6 +34,7 @@ ${answers.desc}
 ## License
 ${renderLicenseLink(answers.license)}
 `;
+return template;
 }
 
 module.exports = generateMarkdown;
