@@ -16,7 +16,7 @@ A sample README generator using the terminal command line for project informatio
 ## Demontrastion
 The following image demonstrates the application functionality:
 
-![live demo](../Assets/Readme-demo.gif)
+![live demo](./Assets/Readme-demo.gif)
 
 ## Installation
 Please install node.js to run application
