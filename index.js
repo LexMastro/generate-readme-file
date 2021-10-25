@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./utils/generateMarkdown');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 const path = require('path')
 
 // TODO: Create an array of questions for user input
@@ -10,63 +10,54 @@ const questions = [
         name: "title",
         message: "What is your project title?",
         // Validate user inout to check if it is a value before continuing to next question
-        valiidate: (value) =>{ if(value) {return true} else {return 'Please enter value to continue'}},
+        validate: (value) =>{ if(value !== "") {return true} else {return 'Please enter value to continue'}},
     },
     {
         type: "input",
         name: "desc",
         message: "Please provide a short description of your project",
-        valiidate: (value) =>{ if(value) {return true} else {return 'Please enter value to continue'}},
+        validate: (value) =>{ if(value !== "") {return true} else {return 'Please enter value to continue'}},
     },
     {
         type: "input",
-        name: "insallation",
+        name: "installation",
         message: "How do want to install your app?",
-        valiidate: (value) =>{ if(value) {return true} else {return 'Please enter value to continue'}},
+        validate: (value) =>{ if(value !== "") {return true} else {return 'Please enter value to continue'}},
     }, 
     {
         type: "input",
-        name: "instructions",
+        name: "usage",
         message: "How do you use your app?",
-        valiidate: (value) =>{ if(value) {return true} else {return 'Please enter value to continue'}},
+        validate: (value) =>{ if(value !== "") {return true} else {return 'Please enter value to continue'}},
+    }, 
+    {
+        type: "input",
+        name: "contributors",
+        message: "Who contributed on this project?",
+        validate: (value) =>{ if(value !== "") {return true} else {return 'Please enter value to continue'}},
     }, 
     {
         type: "list",
         name: "license",
         message: "What license should your project have?",
         choices: [
-            'MIT', 'Apache', 'Boost', 'BSD'
+            'MIT', 'Apache', 'BSL-1.0', 'BSD-3-Clause'
         ], 
-        valiidate: (value) =>{ if(value) {return true} else {return 'Please enter value to continue'}},
+        validate: (value) =>{ if(value !== "") {return true} else {return 'Please enter value to continue'}},
     },
     {
         type: "input",
         name: "gitHub",
         message: "Whats is your GitHub username?",
-        valiidate: (value) =>{ if(value) {return true} else {return 'Please enter value to continue'}},
+        validate: (value) =>{ if(value !== "") {return true} else {return 'Please enter value to continue'}},
     }, 
     {
         type: "input",
         name: "email",
         message: "Whats is your email?",
-        valiidate: (value) =>{ if(value) {return true} else {return 'Please enter value to continue'}},
+        validate: (value) =>{ if(value !== "") {return true} else {return 'Please enter value to continue'}},
     }, 
 ] 
-
-// TODO: Create a function to write README file
-// function createReadme(answers){
-//     const template = `# ${answers.title}
-// # Description
-// ${answers.desc}
-
-// # License
-// ![alt](url)
-// ${answers.license} 
-
-// `;
-// }
-
-
 
 // TODO: Create a function to initialize app
 function init() {
@@ -89,8 +80,6 @@ function init() {
         )
     });
  };
-
-
 
 // Function call to initialize app
 init();

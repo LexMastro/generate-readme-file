@@ -1,40 +1,66 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  if (license === undefined) {
+    throw new Error("License is required")
+  }
+  return `https://img.shields.io/badge/License-${license}-blue`;
+
+}
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  const link = `https://img.shields.io/badge/License-${license}-blue`
-  return `![${license}]()`
-}
+  if (license === undefined) {
+    throw new Error("License is required")
+  }
+  return `https://opensource.org/licenses/${license}`;
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(answers) {
+  const badge = renderLicenseBadge(answers.license);
+  const licenseLink = renderLicenseLink(answers.license);
   const template = `# ${answers.title}
-# Description
+![${licenseLink}](${badge})
+## Description
 ${answers.desc}
 
 ## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
-- [Instrcutions](#instructions)
+- [Usage](#usage)
+- [Contributors](#contributors)
+- [Tests](#tests)
+- [Questions](#questions)
 - [License](#license)
 
-# Installation
-${answers.desc}
+## Installation
+${answers.installation}
 
-# Instructions
-${answers.desc}
+## Usage
+${answers.usage}
+
+## Contributors
+${answers.gitHub}
+${answers.contributors}
+
+## Tests
+\`\`\`bash
+npm run test 
+\`\`\`
+
+## questions
+Any questions please email ${answers.email}
 
 ## License
-${renderLicenseLink(answers.license)}
+This project is licensed under ${answers.license}.
+
+
 `;
-return template;
+
+  return template;
 }
 
 module.exports = generateMarkdown;
