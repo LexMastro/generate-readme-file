@@ -29,12 +29,18 @@ ${answers.desc}
 
 ## Table of Contents
 - [Description](#description)
+- [Demo](#demonstration)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributors](#contributors)
 - [Tests](#tests)
 - [Questions](#questions)
 - [License](#license)
+
+## Demontrastion
+The following image demonstrates the application functionality:
+
+![live demo](../Assets/Readme-demo.gif)
 
 ## Installation
 ${answers.installation}
@@ -51,12 +57,11 @@ ${answers.contributors}
 npm run test 
 \`\`\`
 
-## questions
+## Questions
 Any questions please email ${answers.email}
 
 ## License
 This project is licensed under ${answers.license}.
-
 
 `;
 
