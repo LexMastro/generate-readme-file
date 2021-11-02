@@ -1,5 +1,6 @@
 # Readme Generator
 ![https://opensource.org/licenses/MIT](https://img.shields.io/badge/License-MIT-blue)
+
 ## Description
 A sample README generator using the terminal command line for project information
 
@@ -16,7 +17,7 @@ A sample README generator using the terminal command line for project informatio
 ## Demontrastion
 The following image demonstrates the application functionality:
 
-![live demo](./Assets/Readme-demo.gif)
+[_here_](https://vimeo.com/641707460)
 
 ## Installation
 Please install node.js to run application

@@ -1,7 +1,8 @@
 # Readme Generator
 ![https://opensource.org/licenses/MIT](https://img.shields.io/badge/License-MIT-blue)
+
 ## Description
-A sample README generator using the terminal command line for project information
+A simple readme generator to make markdown files for future projects
 
 ## Table of Contents
 - [Description](#description)
@@ -22,10 +23,11 @@ The following image demonstrates the application functionality:
 Please install node.js to run application
 
 ## Usage
-npm install
+npm install & node index.js
 
 ## Contributors
 LexMastro
+Alexis Mastrodomenico
 
 ## Tests
 ```bash
